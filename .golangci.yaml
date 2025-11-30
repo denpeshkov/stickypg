@@ -1,0 +1,74 @@
+version: "2"
+run:
+  timeout: 2m
+linters:
+  default: standard
+  enable:
+    - asasalint
+    - asciicheck
+    - bidichk
+    - bodyclose
+    - canonicalheader
+    - contextcheck
+    - copyloopvar
+    - durationcheck
+    - errcheck
+    - errchkjson
+    - errname
+    - errorlint
+    - exhaustive
+    - exptostd
+    - fatcontext
+    - forbidigo
+    - forcetypeassert
+    - gocheckcompilerdirectives
+    - gochecksumtype
+    - gocritic
+    - godoclint
+    - gosec
+    - gosmopolitan
+    - govet
+    - ineffassign
+    - intrange
+    - loggercheck
+    - mirror
+    - misspell
+    - modernize
+    - musttag
+    - nilerr
+    - nilnesserr
+    - nolintlint
+    - paralleltest
+    - perfsprint
+    - prealloc
+    - promlinter
+    - recvcheck
+    - revive
+    - rowserrcheck
+    - sloglint
+    - sqlclosecheck
+    - staticcheck
+    - tagalign
+    - tagliatelle
+    - unconvert
+    - unparam
+    - unused
+    - wastedassign
+    - zerologlint
+  settings:
+    paralleltest:
+      # Ignore missing calls to `t.Parallel()` and only report incorrect uses of it.
+      ignore-missing: true
+    revive:
+      rules:
+        - name: exported
+          disabled: true
+formatters:
+  enable:
+    - gofmt
+    - gofumpt
+    - goimports
+  settings:
+    goimports:
+      local-prefixes:
+        - github.com/denpeshkov/stickypg
